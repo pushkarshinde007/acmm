@@ -6,12 +6,16 @@ import { AboutTransition } from '@/components/about/AboutTransition'
 import { NmietTransition } from '@/components/nmiet/NmietTransition'
 import { DomainsTransition } from '@/components/domains/DomainsTransition'
 import { StoryboardTimeline } from '@/components/hero/StoryboardTimeline'
+import { VideoLoader } from '@/components/ui/common/VideoLoader'
 import { JoinModal } from '@/components/ui/common/JoinModal'
 import { siteConfig } from '@/core/config/site.config'
 
 export const HomePage: React.FC = () => {
   return (
     <div className="relative min-h-screen bg-[#FAF7EF] text-[#102033] flex flex-col justify-between selection:bg-[#1457A6] selection:text-white">
+      {/* 0. Introductory 5-Second Video Loader */}
+      <VideoLoader durationSeconds={5} />
+
       {/* 1. Header & Navigation */}
       <Navbar />
       <MobileDrawer />
