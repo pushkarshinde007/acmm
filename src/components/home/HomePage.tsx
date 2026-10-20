@@ -3,6 +3,7 @@ import { Navbar } from '@/components/ui/navigation/Navbar'
 import { MobileDrawer } from '@/components/ui/navigation/MobileDrawer'
 import { HeroScene } from '@/components/hero/HeroScene'
 import { AboutTransition } from '@/components/about/AboutTransition'
+import { GallerySection } from '@/components/gallery/GallerySection'
 import { VideoLoader } from '@/components/ui/common/VideoLoader'
 import { JoinModal } from '@/components/ui/common/JoinModal'
 import { siteConfig } from '@/core/config/site.config'
@@ -24,6 +25,9 @@ export const HomePage: React.FC = () => {
 
         {/* Phase 2: About ACM NMIET — The Community Atrium */}
         <AboutTransition />
+
+        {/* Phase 3: Gallery — Exact Replication from Reference */}
+        <GallerySection />
       </main>
 
       {/* 3. Minimal Clean Architectural Footer */}
