@@ -9,9 +9,10 @@ import Team from '@/components/ui/team-01'
 import PartnersSection from '@/components/ui/partners'
 import { GallerySection } from '@/components/gallery/GallerySection'
 import { ContactSection } from '@/components/contact/ContactSection'
+import { CourageFooterSection } from '@/components/footer/CourageFooterSection'
 import { VideoLoader } from '@/components/ui/common/VideoLoader'
 import { JoinModal } from '@/components/ui/common/JoinModal'
-import { siteConfig } from '@/core/config/site.config'
+
 
 export const HomePage: React.FC = () => {
   return (
@@ -50,29 +51,8 @@ export const HomePage: React.FC = () => {
         <ContactSection />
       </main>
 
-      {/* 3. Minimal Clean Architectural Footer */}
-      <footer id="footer" className="w-full bg-[#FAF7EF] border-t border-[#071B34]/10 py-6 px-4 sm:px-6 lg:px-10 text-xs text-[#536273]">
-        <div className="max-w-[1440px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <img
-              src="/assets/logo/acm_nmiet_logo.png"
-              alt="ACM NMIET Logo"
-              className="w-8 h-8 object-contain"
-            />
-            <div className="flex items-center gap-2">
-              <span className="font-display font-bold text-[#071B34]">
-                {siteConfig.chapter.name}
-              </span>
-              <span>•</span>
-              <span>{siteConfig.chapter.subname}</span>
-            </div>
-          </div>
-
-          <p className="text-center sm:text-right">
-            {siteConfig.chapter.institution}
-          </p>
-        </div>
-      </footer>
+      {/* 3. Final Footer Section with COURAGE Crack-Open Animation & Revealed Banner */}
+      <CourageFooterSection />
 
       {/* 4. Intake Join Modal */}
       <JoinModal />
