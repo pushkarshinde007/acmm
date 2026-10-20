@@ -12,7 +12,15 @@ export const Navbar: React.FC = () => {
   const handleNavClick = (label: string, href: string) => {
     setActiveItem(label)
     if (href.startsWith('#')) {
-      const target = document.querySelector(href)
+      const target =
+        document.querySelector(href) ||
+        (href === '#domain'
+          ? document.querySelector('#domains')
+          : href === '#domains'
+            ? document.querySelector('#domain')
+            : href === '#nmiet' || href === '#about' || href === '#about-nmiet'
+              ? document.querySelector('#about') || document.querySelector('#about-master')
+              : null)
       if (target) {
         target.scrollIntoView({ behavior: 'smooth' })
       }
@@ -65,7 +73,7 @@ export const Navbar: React.FC = () => {
 
         {/* Center: Minimal Navigation Links (Desktop) */}
         <nav
-          className="hidden md:flex items-center gap-2 lg:gap-4"
+          className="hidden xl:flex items-center gap-1.5 2xl:gap-3"
           aria-label="Main Navigation"
         >
           {siteConfig.navItems.map((item) => {
@@ -78,7 +86,7 @@ export const Navbar: React.FC = () => {
                   e.preventDefault()
                   handleNavClick(item.label, item.href)
                 }}
-                className={`relative px-3 py-1.5 text-[13.5px] font-medium transition-all duration-200 rounded-md ${
+                className={`relative px-2.5 2xl:px-3 py-1.5 text-[13px] 2xl:text-[13.5px] font-medium transition-all duration-200 rounded-md whitespace-nowrap ${
                   isActive
                     ? 'text-[#071B34] font-semibold'
                     : 'text-[#536273] hover:text-[#071B34] hover:bg-[#071B34]/5'
@@ -86,7 +94,7 @@ export const Navbar: React.FC = () => {
               >
                 {item.label}
                 {isActive && (
-                  <span className="absolute bottom-0 left-3 right-3 h-[2px] bg-[#1457A6] rounded-full" />
+                  <span className="absolute bottom-0 left-2.5 right-2.5 2xl:left-3 2xl:right-3 h-[2px] bg-[#1457A6] rounded-full" />
                 )}
               </a>
             )
@@ -107,7 +115,7 @@ export const Navbar: React.FC = () => {
           <button
             onClick={toggleMobileMenu}
             aria-label="Toggle Menu"
-            className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-md text-[#071B34] hover:bg-[#071B34]/5 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1457A6]"
+            className="xl:hidden inline-flex items-center justify-center w-10 h-10 rounded-md text-[#071B34] hover:bg-[#071B34]/5 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1457A6]"
           >
             {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>

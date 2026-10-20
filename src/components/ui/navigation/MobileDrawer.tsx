@@ -26,7 +26,15 @@ export const MobileDrawer: React.FC = () => {
     setActiveItem(label)
     closeMobileMenu()
     if (href.startsWith('#')) {
-      const target = document.querySelector(href)
+      const target =
+        document.querySelector(href) ||
+        (href === '#domain'
+          ? document.querySelector('#domains')
+          : href === '#domains'
+            ? document.querySelector('#domain')
+            : href === '#nmiet' || href === '#about' || href === '#about-nmiet'
+              ? document.querySelector('#about') || document.querySelector('#about-master')
+              : null)
       if (target) {
         target.scrollIntoView({ behavior: 'smooth' })
       }
@@ -34,7 +42,7 @@ export const MobileDrawer: React.FC = () => {
   }
 
   return (
-    <div className="fixed inset-0 z-50 md:hidden">
+    <div className="fixed inset-0 z-50 xl:hidden">
       {/* Backdrop */}
       <div
         className="fixed inset-0 bg-[#071B34]/40 backdrop-blur-sm transition-opacity"

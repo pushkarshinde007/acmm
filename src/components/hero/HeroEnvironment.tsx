@@ -21,7 +21,7 @@ export const HeroEnvironment: React.FC<HeroEnvironmentProps> = ({
     <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none bg-[#FAF7EF]">
       {/* 1. Cinematic Background Layer: Skyline, Clouds, Sky & Morning Sun */}
       <div
-        className="absolute inset-0 w-full h-full transition-transform duration-700 ease-out will-change-transform"
+        className="absolute inset-0 w-full h-full will-change-transform"
         style={{
           transform: `scale(${bgScale}) translate3d(${bgTranslateX}px, ${bgTranslateY}px, 0)`,
         }}
