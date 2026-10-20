@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" width="400" height="240">
+  <rect width="400" height="240" rx="16" fill="#00285A"/>
+  <defs>
+    <linearGradient id="intel-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00C7FD" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#00285A" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="240" rx="16" fill="url(#intel-glow)"/>
+  <g transform="translate(200, 105)">
+    <text x="0" y="15" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="68" font-weight="800" fill="#00C7FD" letter-spacing="-3" text-anchor="middle">intel<tspan fill="#FFFFFF">.</tspan></text>
+  </g>
+  <rect x="30" y="182" width="340" height="28" rx="6" fill="#00C7FD" fill-opacity="0.12"/>
+  <text x="200" y="201" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="12" font-weight="700" fill="#70DCFE" text-anchor="middle" letter-spacing="1.5">INTEL CORPORATION</text>
+</svg>

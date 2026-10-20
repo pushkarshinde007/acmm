@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" width="400" height="240">
+  <rect width="400" height="240" rx="16" fill="#0C1425"/>
+  <defs>
+    <linearGradient id="quin-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366F1" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#0C1425" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="240" rx="16" fill="url(#quin-glow)"/>
+  <g transform="translate(200, 105)">
+    <polygon points="-100,-28 -80,-40 -60,-28 -60,-4 -80,8 -100,-4" fill="#6366F1" fill-opacity="0.3" stroke="#818CF8" stroke-width="2.5"/>
+    <text x="-40" y="10" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="36" font-weight="800" fill="#FFFFFF" letter-spacing="-0.5">Quintoxa</text>
+  </g>
+  <rect x="30" y="182" width="340" height="28" rx="6" fill="#6366F1" fill-opacity="0.15"/>
+  <text x="200" y="201" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="12" font-weight="700" fill="#A5B4FC" text-anchor="middle" letter-spacing="1.5">ENTERPRISE DIGITAL PLATFORMS</text>
+</svg>

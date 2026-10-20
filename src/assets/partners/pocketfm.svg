@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" width="400" height="240">
+  <rect width="400" height="240" rx="16" fill="#1B070B"/>
+  <defs>
+    <linearGradient id="pfm-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E50914" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#1B070B" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="240" rx="16" fill="url(#pfm-glow)"/>
+  <g transform="translate(200, 105)">
+    <rect x="-120" y="-32" width="56" height="56" rx="14" fill="#E50914"/>
+    <!-- Sound Waves inside badge -->
+    <path d="M -102 -10 L -102 6 M -92 -18 L -92 14 M -82 -10 L -82 6" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
+    <text x="-50" y="10" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="36" font-weight="800" fill="#FFFFFF" letter-spacing="-0.5">pocket <tspan fill="#E50914">fm</tspan></text>
+  </g>
+  <rect x="30" y="182" width="340" height="28" rx="6" fill="#E50914" fill-opacity="0.15"/>
+  <text x="200" y="201" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="12" font-weight="700" fill="#FF6B74" text-anchor="middle" letter-spacing="1.5">AUDIO ENTERTAINMENT NETWORK</text>
+</svg>

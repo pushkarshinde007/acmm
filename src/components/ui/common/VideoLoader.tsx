@@ -9,11 +9,40 @@ export const VideoLoader: React.FC<VideoLoaderProps> = ({
   onComplete,
   durationSeconds = 5,
 }) => {
-  const [isVisible, setIsVisible] = useState(true)
+  // If user already saw the intro video in this session or refreshed on a specific section (#events, #domains, etc.), don't block
+  const alreadySeen = typeof window !== 'undefined' && (
+    sessionStorage.getItem('acm_video_intro_seen') === 'true' ||
+    window.location.hash.length > 1
+  )
+
+  const [isVisible, setIsVisible] = useState(!alreadySeen)
   const [isFadingOut, setIsFadingOut] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null)
 
+  const handleSkip = () => {
+    sessionStorage.setItem('acm_video_intro_seen', 'true')
+    setIsFadingOut(true)
+    setTimeout(() => {
+      setIsVisible(false)
+      onComplete?.()
+    }, 400)
+  }
+
   useEffect(() => {
+    if (alreadySeen) {
+      onComplete?.()
+      return
+    }
+
+    sessionStorage.setItem('acm_video_intro_seen', 'true')
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' || e.key === ' ' || e.key === 'Enter') {
+        handleSkip()
+      }
+    }
+    window.addEventListener('keydown', handleKeyDown)
+
     // Attempt playback immediately
     if (videoRef.current) {
       videoRef.current.play().catch(() => {
@@ -25,31 +54,24 @@ export const VideoLoader: React.FC<VideoLoaderProps> = ({
       })
     }
 
-    // Begin fade-out 700ms before total 5 seconds
+    // Begin fade-out 700ms before total duration
     const fadeOutDelay = Math.max((durationSeconds * 1000) - 700, 1000)
     const fadeOutTimer = setTimeout(() => {
       setIsFadingOut(true)
     }, fadeOutDelay)
 
-    // Complete loader after exactly 5 seconds
+    // Complete loader
     const finishTimer = setTimeout(() => {
       setIsVisible(false)
       onComplete?.()
     }, durationSeconds * 1000)
 
     return () => {
+      window.removeEventListener('keydown', handleKeyDown)
       clearTimeout(fadeOutTimer)
       clearTimeout(finishTimer)
     }
-  }, [durationSeconds, onComplete])
-
-  const handleSkip = () => {
-    setIsFadingOut(true)
-    setTimeout(() => {
-      setIsVisible(false)
-      onComplete?.()
-    }, 400)
-  }
+  }, [alreadySeen, durationSeconds, onComplete])
 
   if (!isVisible) return null
 

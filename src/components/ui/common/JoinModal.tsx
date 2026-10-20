@@ -57,8 +57,15 @@ export const JoinModal: React.FC = () => {
 
         {submitted ? (
           <div className="py-12 text-center space-y-4">
-            <div className="w-14 h-14 bg-[#1457A6]/10 text-[#1457A6] rounded-full flex items-center justify-center mx-auto">
-              <CheckCircle2 className="w-8 h-8" />
+            <div className="w-16 h-16 mx-auto flex items-center justify-center">
+              <img
+                src="/assets/logo/acm_nmiet_logo.png"
+                alt="ACM NMIET"
+                className="w-16 h-16 object-contain"
+              />
+            </div>
+            <div className="w-10 h-10 bg-[#1457A6]/10 text-[#1457A6] rounded-full flex items-center justify-center mx-auto">
+              <CheckCircle2 className="w-6 h-6" />
             </div>
             <h3 className="font-display text-2xl font-bold text-[#071B34]">
               Welcome to ACM NMIET!
@@ -70,17 +77,24 @@ export const JoinModal: React.FC = () => {
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-5">
-            <div>
-              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-[#1457A6] mb-1">
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>{siteConfig.chapter.eyebrow}</span>
+            <div className="flex items-start gap-4">
+              <img
+                src="/assets/logo/acm_nmiet_logo.png"
+                alt="ACM NMIET"
+                className="w-12 h-12 object-contain flex-shrink-0 mt-0.5"
+              />
+              <div>
+                <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-[#1457A6] mb-1">
+                  <Sparkles className="w-3.5 h-3.5" />
+                  <span>{siteConfig.chapter.eyebrow}</span>
+                </div>
+                <h2 className="font-display text-2xl sm:text-3xl font-bold text-[#071B34] tracking-tight">
+                  Join the Chapter
+                </h2>
+                <p className="text-sm text-[#536273] mt-1">
+                  Be part of a student community where ideas become skills, projects, and experiences.
+                </p>
               </div>
-              <h2 className="font-display text-2xl sm:text-3xl font-bold text-[#071B34] tracking-tight">
-                Join the Chapter
-              </h2>
-              <p className="text-sm text-[#536273] mt-1">
-                Be part of a student community where ideas become skills, projects, and experiences.
-              </p>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" width="400" height="240">
+  <rect width="400" height="240" rx="16" fill="#0A192F"/>
+  <defs>
+    <linearGradient id="slang-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00D2FF" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#0A192F" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="240" rx="16" fill="url(#slang-glow)"/>
+  <g transform="translate(200, 105)">
+    <!-- Voice AI concentric waves -->
+    <circle cx="-110" cy="-5" r="10" fill="#00D2FF"/>
+    <path d="M -98 -20 C -92 -20 -86 -10 -86 -5 C -86 0 -92 10 -98 10" fill="none" stroke="#00D2FF" stroke-width="4" stroke-linecap="round"/>
+    <path d="M -86 -30 C -76 -30 -66 -18 -66 -5 C -66 8 -76 20 -86 20" fill="none" stroke="#00D2FF" stroke-width="4" stroke-linecap="round" opacity="0.6"/>
+    <text x="-55" y="10" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="36" font-weight="800" fill="#FFFFFF" letter-spacing="-0.5">slang <tspan fill="#00D2FF">labs</tspan></text>
+  </g>
+  <rect x="30" y="182" width="340" height="28" rx="6" fill="#00D2FF" fill-opacity="0.12"/>
+  <text x="200" y="201" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="12" font-weight="700" fill="#70E6FF" text-anchor="middle" letter-spacing="1.5">IN-APP VOICE AI COPILOT</text>
+</svg>

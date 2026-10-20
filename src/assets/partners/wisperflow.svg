@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" width="400" height="240">
+  <rect width="400" height="240" rx="16" fill="#140C26"/>
+  <defs>
+    <linearGradient id="wispr-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#140C26" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="240" rx="16" fill="url(#wispr-glow)"/>
+  <g transform="translate(200, 105)">
+    <circle cx="-110" cy="-5" r="24" fill="#8B5CF6" fill-opacity="0.25" stroke="#8B5CF6" stroke-width="2"/>
+    <path d="M -122 -5 C -116 -17 -104 -17 -110 -5 C -116 7 -104 7 -98 -5" fill="none" stroke="#C4B5FD" stroke-width="3.5" stroke-linecap="round"/>
+    <text x="-70" y="10" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="34" font-weight="800" fill="#FFFFFF" letter-spacing="-0.5">Wispr <tspan fill="#A78BFA">Flow</tspan></text>
+  </g>
+  <rect x="30" y="182" width="340" height="28" rx="6" fill="#8B5CF6" fill-opacity="0.15"/>
+  <text x="200" y="201" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="12" font-weight="700" fill="#C4B5FD" text-anchor="middle" letter-spacing="1.5">SPEECH-TO-TEXT DICTATION AI</text>
+</svg>

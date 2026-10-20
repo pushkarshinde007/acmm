@@ -123,9 +123,11 @@ export const AboutHeroSplit: React.FC = () => {
             {/* Floating Banner Badge — Bottom Left */}
             <div className="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-md border border-[#071B34]/10 rounded-xl p-3 flex items-center justify-between shadow-lg">
               <div className="flex items-center gap-2.5">
-                <div className="w-7 h-7 rounded-lg bg-[#1764BD]/10 text-[#1764BD] flex items-center justify-center font-bold text-xs">
-                  ACM
-                </div>
+                <img
+                  src="/assets/logo/acm_nmiet_logo.png"
+                  alt="ACM NMIET"
+                  className="w-8 h-8 object-contain"
+                />
                 <div>
                   <div className="text-[12px] font-bold text-[#071B34] leading-tight">
                     NMIET Student Chapter

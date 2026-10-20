@@ -4,6 +4,9 @@ import { MobileDrawer } from '@/components/ui/navigation/MobileDrawer'
 import { HeroScene } from '@/components/hero/HeroScene'
 import { AboutTransition } from '@/components/about/AboutTransition'
 import { DomainsPage } from '@/components/domains/DomainsPage'
+import { EventsPage } from '@/components/events/EventsPage'
+import Team from '@/components/ui/team-01'
+import PartnersSection from '@/components/ui/partners'
 import { VideoLoader } from '@/components/ui/common/VideoLoader'
 import { JoinModal } from '@/components/ui/common/JoinModal'
 import { siteConfig } from '@/core/config/site.config'
@@ -28,17 +31,33 @@ export const HomePage: React.FC = () => {
 
         {/* Phase 3: Domains — The Five Core Domains with 3D WorksWheel */}
         <DomainsPage />
+
+        {/* Phase 4: Events — Disc Cascade Carousel & Event Report Journey */}
+        <EventsPage />
+
+        {/* Phase 5: Team — Chapter Leadership & Core Team */}
+        <Team id="team" />
+
+        {/* Phase 6: Partners — Industry & Ecosystem Partners Marquee */}
+        <PartnersSection id="partners" />
       </main>
 
       {/* 3. Minimal Clean Architectural Footer */}
       <footer id="contact" className="w-full bg-[#FAF7EF] border-t border-[#071B34]/10 py-6 px-4 sm:px-6 lg:px-10 text-xs text-[#536273]">
         <div className="max-w-[1440px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2">
-            <span className="font-display font-bold text-[#071B34]">
-              {siteConfig.chapter.name}
-            </span>
-            <span>•</span>
-            <span>{siteConfig.chapter.subname}</span>
+          <div className="flex items-center gap-3">
+            <img
+              src="/assets/logo/acm_nmiet_logo.png"
+              alt="ACM NMIET Logo"
+              className="w-8 h-8 object-contain"
+            />
+            <div className="flex items-center gap-2">
+              <span className="font-display font-bold text-[#071B34]">
+                {siteConfig.chapter.name}
+              </span>
+              <span>•</span>
+              <span>{siteConfig.chapter.subname}</span>
+            </div>
           </div>
 
           <p className="text-center sm:text-right">

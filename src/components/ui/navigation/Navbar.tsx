@@ -42,26 +42,16 @@ export const Navbar: React.FC = () => {
           onClick={() => setActiveItem('Home')}
           className="flex items-center gap-3 group text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1457A6] rounded-md p-1"
         >
-          {/* ACM Diamond Emblem */}
-          <div className="relative w-9 h-9 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
-            <svg viewBox="0 0 40 40" className="w-full h-full" fill="none">
-              <polygon
-                points="20,2 38,20 20,38 2,20"
-                className="stroke-[#071B34] fill-[#FAF7EF]/80"
-                strokeWidth="2.2"
-                strokeLinejoin="round"
-              />
-              <polygon
-                points="20,8 32,20 20,32 8,20"
-                className="stroke-[#1457A6] fill-[#1457A6]/15"
-                strokeWidth="1.2"
-                strokeLinejoin="round"
-              />
-              <circle cx="20" cy="20" r="2.8" className="fill-[#1457A6]" />
-            </svg>
+          {/* Official ACM NMIET Logo */}
+          <div className="relative h-10 sm:h-11 w-auto flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+            <img
+              src="/assets/logo/acm_nmiet_logo.png"
+              alt="ACM NMIET Student Chapter Logo"
+              className="h-10 sm:h-11 w-auto object-contain"
+            />
           </div>
 
-          <div className="flex flex-col">
+          <div className="hidden sm:flex flex-col">
             <span className="font-display text-[15px] font-bold tracking-tight text-[#071B34] leading-tight group-hover:text-[#1457A6] transition-colors">
               {siteConfig.chapter.name}
             </span>

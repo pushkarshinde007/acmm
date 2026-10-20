@@ -55,17 +55,11 @@ export const MobileDrawer: React.FC = () => {
           {/* Header */}
           <div className="flex items-center justify-between pb-6 border-b border-[#071B34]/10">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8">
-                <svg viewBox="0 0 40 40" className="w-full h-full" fill="none">
-                  <polygon
-                    points="20,2 38,20 20,38 2,20"
-                    stroke="#071B34"
-                    strokeWidth="2.5"
-                    fill="none"
-                  />
-                  <circle cx="20" cy="20" r="3" fill="#1457A6" />
-                </svg>
-              </div>
+              <img
+                src="/assets/logo/acm_nmiet_logo.png"
+                alt="ACM NMIET Student Chapter Logo"
+                className="w-10 h-10 object-contain"
+              />
               <span className="font-display font-bold text-[#071B34] text-sm">
                 {siteConfig.chapter.name}
               </span>
