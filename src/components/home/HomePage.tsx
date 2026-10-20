@@ -7,6 +7,8 @@ import { DomainsPage } from '@/components/domains/DomainsPage'
 import { EventsPage } from '@/components/events/EventsPage'
 import Team from '@/components/ui/team-01'
 import PartnersSection from '@/components/ui/partners'
+import { GallerySection } from '@/components/gallery/GallerySection'
+import { ContactSection } from '@/components/contact/ContactSection'
 import { VideoLoader } from '@/components/ui/common/VideoLoader'
 import { JoinModal } from '@/components/ui/common/JoinModal'
 import { siteConfig } from '@/core/config/site.config'
@@ -40,10 +42,16 @@ export const HomePage: React.FC = () => {
 
         {/* Phase 6: Partners — Industry & Ecosystem Partners Marquee */}
         <PartnersSection id="partners" />
+
+        {/* Phase 7: Gallery — Exact Replication from Reference */}
+        <GallerySection />
+
+        {/* Phase 8: Contact — Recreated from ACM-VIT Reference */}
+        <ContactSection />
       </main>
 
       {/* 3. Minimal Clean Architectural Footer */}
-      <footer id="contact" className="w-full bg-[#FAF7EF] border-t border-[#071B34]/10 py-6 px-4 sm:px-6 lg:px-10 text-xs text-[#536273]">
+      <footer id="footer" className="w-full bg-[#FAF7EF] border-t border-[#071B34]/10 py-6 px-4 sm:px-6 lg:px-10 text-xs text-[#536273]">
         <div className="max-w-[1440px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <img

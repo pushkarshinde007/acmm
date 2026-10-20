@@ -1,0 +1,240 @@
+/* Contact Section Styling — Replicated from ACM-VIT Reference */
+
+.contact-section {
+  position: relative;
+  width: 100%;
+  background-color: #050505;
+  color: #ffffff;
+  overflow: visible;
+}
+
+/* Desktop Laptop Scroll Section */
+.laptop-section {
+  position: relative;
+  width: 100%;
+  height: 260vh;
+  background-color: #050505;
+}
+
+.laptop-sticky {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #050505;
+}
+
+/* 16:9 Stage Wrapper locks Canvas & Screen Form together with 100% precision */
+.laptop-stage-wrapper {
+  position: relative;
+  width: 92vw;
+  max-width: 1240px;
+  max-height: 85vh;
+  aspect-ratio: 16 / 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#laptop-canvas {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: brightness(1.12);
+  user-select: none;
+  pointer-events: auto;
+}
+
+/* "Contact us!" Heading (Centered over closed laptop) */
+.contact-heading {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 15;
+  pointer-events: auto;
+  cursor: pointer;
+  width: 100%;
+  max-width: 700px;
+  padding: 0 1rem;
+}
+
+.contact-heading-title {
+  color: #ffffff;
+  font-family: 'Sora', sans-serif;
+  font-size: clamp(2.2rem, 5.5vw, 4rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.9);
+}
+
+.contact-heading-hint {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.35em;
+  color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/* 
+  Form Overlay Placed Directly Inside MacBook Screen:
+  Screen display in 1920x1080 frame is:
+  top: 8%, left: 11%, width: 78%, height: 72%
+  Completely transparent background — letting the authentic 3D laptop screen show through!
+*/
+.contact-form-overlay {
+  position: absolute;
+  top: 8%;
+  left: 11%;
+  width: 78%;
+  height: 72%;
+  z-index: 20;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.contact-screen-card {
+  width: 100%;
+  height: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem 1rem;
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  overflow: visible;
+}
+
+/* macOS Window Header Bar */
+.macos-window-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 460px;
+  padding: 0.15rem 0.25rem 0.3rem;
+  margin-bottom: 0.2rem;
+  border-bottom: 1px solid rgba(5, 5, 5, 0.12);
+  background: transparent;
+}
+
+.macos-traffic-dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.macos-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+.macos-dot:hover {
+  transform: scale(1.15);
+  filter: brightness(1.1);
+}
+
+.macos-dot-close {
+  background-color: #ff5f56;
+  border: 1px solid #e0443e;
+}
+
+.macos-dot-minimize {
+  background-color: #ffbd2e;
+  border: 1px solid #dea123;
+}
+
+.macos-dot-maximize {
+  background-color: #27c93f;
+  border: 1px solid #1aab29;
+}
+
+.macos-title {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(5, 5, 5, 0.65);
+}
+
+/* Verified Contact Badge on Screen */
+.contact-info-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  font-size: 10px;
+  color: #374151;
+  margin-top: 0.15rem;
+  margin-bottom: 0.25rem;
+  padding: 0.15rem 0.6rem;
+  background-color: rgba(0, 0, 0, 0.04);
+  border-radius: 9999px;
+}
+
+/* Desktop Inputs (Dashed Borders Matching Reference: 1.5px dashed #050505) */
+.contact-input {
+  border-radius: 0.75rem;
+  border: 1.5px dashed #050505;
+  background: transparent;
+  padding: 0.35rem 0.65rem;
+  font-size: 0.76rem;
+  font-weight: 500;
+  color: #050505;
+  outline: none;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+  width: 100%;
+}
+
+.contact-input::placeholder {
+  color: rgba(5, 5, 5, 0.4);
+}
+
+.contact-input:focus {
+  border-color: #f95f4a;
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Mobile Inputs */
+.contact-mobile-input {
+  border-radius: 1rem;
+  border: 2px dashed rgba(255, 255, 255, 0.35);
+  background: transparent;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  color: #ffffff;
+  outline: none;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+  width: 100%;
+}
+
+.contact-mobile-input:focus {
+  border-color: #f95f4a;
+  background-color: rgba(255, 255, 255, 0.05);
+}
