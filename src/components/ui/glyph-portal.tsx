@@ -10,7 +10,6 @@ import React, {
   useLayoutEffect,
   useRef,
   useState,
-  useCallback,
   type CSSProperties,
   type ReactNode,
 } from "react";
@@ -79,22 +78,36 @@ export const GlyphPortal: React.FC<GlyphPortalProps> = ({
     }
   }, [activeLetter, letters]);
 
-  // Track scroll progress within container
-  const handleScroll = useCallback(() => {
-    if (!containerRef.current) return;
-    const rect = containerRef.current.getBoundingClientRect();
-    const totalScrollable = rect.height - window.innerHeight;
-    if (totalScrollable <= 0) return;
-
-    const progress = Math.min(Math.max(-rect.top / totalScrollable, 0), 1);
-    setScrollProgress(progress);
-  }, []);
-
+  // Track scroll progress within container with rAF throttle
   useLayoutEffect(() => {
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [handleScroll]);
+    let frameId = 0
+    let lastP = -1
+
+    const updateScroll = () => {
+      if (!containerRef.current) return
+      const rect = containerRef.current.getBoundingClientRect()
+      const totalScrollable = rect.height - window.innerHeight
+      if (totalScrollable <= 0) return
+
+      const progress = Math.min(Math.max(-rect.top / totalScrollable, 0), 1)
+      if (Math.abs(progress - lastP) > 0.001) {
+        lastP = progress
+        setScrollProgress(progress)
+      }
+    }
+
+    const handleScroll = () => {
+      cancelAnimationFrame(frameId)
+      frameId = requestAnimationFrame(updateScroll)
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    updateScroll()
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+      cancelAnimationFrame(frameId)
+    }
+  }, [])
 
   // Calculate transform zoom: camera travels through the chosen letter
   // Progress 0.0 -> 0.4: Front content visible, gentle zoom
@@ -148,7 +161,7 @@ export const GlyphPortal: React.FC<GlyphPortalProps> = ({
         >
           <div
             ref={wordRef}
-            className="transition-transform will-change-transform flex items-center justify-center select-none"
+            className="will-change-transform flex items-center justify-center select-none"
             style={{
               fontFamily,
               fontWeight,

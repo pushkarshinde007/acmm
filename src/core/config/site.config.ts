@@ -1,5 +1,5 @@
 /**
- * ACM NMIET Site Configuration — Exact Phase 1, Phase 2 & Phase 3 Specification
+ * ACM NMIET Site Configuration — Master About Page Specification
  */
 
 export const siteConfig = {
@@ -23,55 +23,184 @@ export const siteConfig = {
     scrollIndicator: 'SCROLL TO BEGIN',
   },
   about: {
-    label: 'ABOUT ACM NMIET',
+    eyebrow: '02 • ABOUT ACM NMIET',
     headlineLine1: 'A COMMUNITY',
     headlineLine2: 'THAT BUILDS',
-    headlineLine3: 'TOMORROW.',
-    statement: 'Where technology meets creativity, and students turn ideas into experiences.',
+    headlineAccent: 'BEYOND.',
     description:
-      'ACM NMIET Student Chapter is a student-driven community built around learning, experimentation, collaboration and creating meaningful technology experiences.',
-    principles: [
+      'ACM NMIET is a student-driven community of curious minds, builders, and problem-solvers, united by a shared passion for technology, creativity, and real-world impact.',
+    pillars: [
       {
-        number: '01',
+        id: 'learn',
         title: 'LEARN',
-        description: 'Explore technologies, develop skills and learn from peers.',
+        description: 'From peers, mentors and industry experts',
+        icon: 'GraduationCap',
       },
       {
-        number: '02',
+        id: 'build',
         title: 'BUILD',
-        description: 'Turn ideas into projects, experiments and meaningful experiences.',
+        description: 'Projects, products and real solutions',
+        icon: 'Hammer',
       },
       {
-        number: '03',
-        title: 'CONNECT',
-        description: 'Collaborate with students, mentors and the wider technology community.',
+        id: 'collaborate',
+        title: 'COLLABORATE',
+        description: 'With a like-minded community',
+        icon: 'Users',
+      },
+      {
+        id: 'grow',
+        title: 'GROW',
+        description: 'Your skills, network and opportunities',
+        icon: 'Rocket',
       },
     ],
-    primaryCta: 'EXPLORE ACM',
-    secondaryCta: 'OUR COMMUNITY',
+    primaryCta: 'OUR JOURNEY →',
+    secondaryCta: 'MEET THE TEAM',
+  },
+  story: {
+    label: 'OUR STORY',
+    description:
+      'The ACM Student Chapter at NMIET was founded with a vision to create a thriving tech community on campus. From hosting technical events to building impactful projects, we aim to empower students to explore, learn, and innovate beyond the curriculum.',
+    milestones: [
+      {
+        year: '2022',
+        title: 'Chapter Established',
+        icon: 'Flag',
+      },
+      {
+        year: '2023',
+        title: 'First Major Tech Event',
+        icon: 'Users',
+      },
+      {
+        year: '2024',
+        title: 'Community Growth',
+        icon: 'Box',
+      },
+      {
+        year: '2025',
+        title: 'More Impact & Opportunities',
+        icon: 'Trophy',
+      },
+    ],
+    mission: {
+      label: 'OUR MISSION',
+      statement: 'To inspire, enable, and empower students to build technology for a better tomorrow.',
+    },
+  },
+  worldwide: {
+    headingPrefix: 'ACM',
+    headingAccent: 'WORLDWIDE',
+    subtitle: 'A GLOBAL COMMUNITY. A BIGGER IMPACT.',
+    description:
+      "The Association for Computing Machinery (ACM) is the world's largest educational and scientific computing society, uniting computing educators, researchers, professionals, and students to inspire dialogue, share resources, and address the field's challenges.",
+    cta: 'ABOUT ACM →',
+    ctaUrl: 'https://www.acm.org/',
+    stats: [
+      {
+        value: '100K+',
+        label: 'Global Members',
+        icon: 'Users',
+      },
+      {
+        value: '200+',
+        label: 'Countries',
+        icon: 'Globe',
+      },
+      {
+        value: '50+',
+        label: 'Special Interest Groups',
+        icon: 'Layers',
+      },
+      {
+        value: '2,800+',
+        label: 'Chapters Worldwide',
+        icon: 'Landmark',
+      },
+    ],
+    leadership: {
+      heading: 'ACM GLOBAL LEADERSHIP',
+      viewAllText: 'View All →',
+      viewAllUrl: 'https://www.acm.org/about-acm/acm-leadership',
+      members: [
+        {
+          name: 'Yelena Yesha',
+          role: 'ACM President',
+          term: '2024 – 2026',
+          image: '/assets/about/yelena_yesha.jpg',
+        },
+        {
+          name: 'Marcelo Viana',
+          role: 'ACM President-Elect',
+          term: '2024 – 2026',
+          image: '/assets/about/marcelo_viana.jpg',
+        },
+        {
+          name: 'Yannis Ioannidis',
+          role: 'ACM Past President',
+          term: '2022 – 2024',
+          image: '/assets/about/yannis_ioannidis.jpg',
+        },
+        {
+          name: 'Rachana Anandan',
+          role: 'ACM CEO',
+          term: 'Since 2020',
+          image: '/assets/about/rachana_anandan.jpg',
+        },
+      ],
+    },
+  },
+  whatWeDo: {
+    heading: 'WHAT WE DO',
+    exploreMoreText: 'Explore More →',
+    exploreMoreUrl: '#events',
+    cards: [
+      {
+        id: 'events',
+        title: 'EVENTS',
+        description: 'Workshops, Hackathons, Talks & Technical Sessions',
+        image: '/assets/about/what_events.jpg',
+        icon: 'Calendar',
+      },
+      {
+        id: 'projects',
+        title: 'PROJECTS',
+        description: 'Build real-world solutions and open-source contributions',
+        image: '/assets/about/what_projects.jpg',
+        icon: 'Laptop',
+      },
+      {
+        id: 'mentorship',
+        title: 'MENTORSHIP',
+        description: 'Guidance from industry experts and alumni',
+        image: '/assets/about/what_mentorship.jpg',
+        icon: 'GraduationCap',
+      },
+      {
+        id: 'community',
+        title: 'COMMUNITY',
+        description: 'A vibrant network of learners, builders and creators',
+        image: '/assets/about/what_community.jpg',
+        icon: 'Users',
+      },
+      {
+        id: 'opportunities',
+        title: 'OPPORTUNITIES',
+        description: 'Internships, research and industry connections',
+        image: '/assets/about/what_opportunities.jpg',
+        icon: 'Briefcase',
+      },
+    ],
   },
   navItems: [
     { label: 'Home', href: '#home', active: true },
-    { label: 'About', href: '#about', active: false },
-  ],
-  storyboard: [
-    {
-      index: 1,
-      time: '0.0s – 2.0s',
-      title: 'Hero Establishing',
-      description: 'Wide panoramic establishing composition of NMIET campus and futuristic skyline.',
-    },
-    {
-      index: 2,
-      time: '2.0s – 4.0s',
-      title: 'Student Begins Journey',
-      description: 'Camera initiates tracking shot behind student facing campus architecture.',
-    },
-    {
-      index: 3,
-      time: '4.0s – 6.0s',
-      title: 'The Community Atrium',
-      description: 'Atrium opens with amphitheatre, water feature, digital globe, and student collaboration.',
-    },
+    { label: 'About NMIET', href: '#about', active: false },
+    { label: 'Domains', href: '#domains', active: false },
+    { label: 'Events', href: '#events', active: false },
+    { label: 'Team', href: '#team', active: false },
+    { label: 'Partners', href: '#partners', active: false },
+    { label: 'Gallery', href: '#gallery', active: false },
+    { label: 'Contact', href: '#contact', active: false },
   ],
 } as const

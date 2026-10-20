@@ -19,17 +19,32 @@ export const NavigationProvider: React.FC<{ children: React.ReactNode }> = ({ ch
   const [isScrolled, setIsScrolled] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => {
+    let frameId = 0
+
+    const updateSpy = () => {
       setIsScrolled(window.scrollY > 40)
 
-      // Section spy between Home and About
-      const aboutEl = document.getElementById('about')
+      // Section spy for all navigation sections
+      const sections = [
+        { id: 'contact', label: 'Contact' },
+        { id: 'gallery', label: 'Gallery' },
+        { id: 'partners', label: 'Partners' },
+        { id: 'team', label: 'Team' },
+        { id: 'events', label: 'Events' },
+        { id: 'domain', label: 'Domains' },
+        { id: 'domains', label: 'Domains' },
+        { id: 'nmiet', label: 'About NMIET' },
+        { id: 'about', label: 'About NMIET' },
+      ]
 
-      if (aboutEl) {
-        const aboutRect = aboutEl.getBoundingClientRect()
-        if (aboutRect.top <= window.innerHeight * 0.5 && aboutRect.bottom >= window.innerHeight * 0.2) {
-          setActiveItem('About')
-          return
+      for (const section of sections) {
+        const el = document.getElementById(section.id)
+        if (el) {
+          const rect = el.getBoundingClientRect()
+          if (rect.top <= window.innerHeight * 0.5 && rect.bottom >= window.innerHeight * 0.2) {
+            setActiveItem(section.label)
+            return
+          }
         }
       }
 
@@ -38,8 +53,18 @@ export const NavigationProvider: React.FC<{ children: React.ReactNode }> = ({ ch
       }
     }
 
+    const handleScroll = () => {
+      cancelAnimationFrame(frameId)
+      frameId = requestAnimationFrame(updateSpy)
+    }
+
     window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
+    updateSpy()
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      cancelAnimationFrame(frameId)
+    }
   }, [])
 
   const openMobileMenu = () => setIsMobileMenuOpen(true)
