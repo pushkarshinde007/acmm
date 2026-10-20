@@ -34,7 +34,7 @@ export const MobileDrawer: React.FC = () => {
   }
 
   return (
-    <div className="fixed inset-0 z-50 xl:hidden">
+    <div className="fixed inset-0 z-50 md:hidden">
       {/* Backdrop */}
       <div
         className="fixed inset-0 bg-[#071B34]/40 backdrop-blur-sm transition-opacity"

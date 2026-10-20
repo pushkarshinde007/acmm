@@ -7,11 +7,11 @@ export const HeroContent: React.FC<{ scrollProgress?: number }> = ({ scrollProgr
   const { openJoinModal } = useExperience()
 
   const handleExploreClick = () => {
-    const el = document.getElementById('storyboard-section')
+    const el = document.getElementById('about')
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' })
     } else {
-      window.scrollBy({ top: window.innerHeight * 0.85, behavior: 'smooth' })
+      window.scrollBy({ top: window.innerHeight, behavior: 'smooth' })
     }
   }
 

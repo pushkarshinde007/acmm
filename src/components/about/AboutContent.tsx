@@ -20,10 +20,7 @@ export const AboutContent: React.FC<AboutContentProps> = ({ progress, prefersRed
   const translateY = prefersReducedMotion ? 0 : (1 - contentProgress) * 28
 
   const handleOurCommunityClick = () => {
-    const el = document.getElementById('storyboard-section')
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' })
-    }
+    openJoinModal()
   }
 
   return (

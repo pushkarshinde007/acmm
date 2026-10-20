@@ -65,7 +65,7 @@ export const Navbar: React.FC = () => {
 
         {/* Center: Minimal Navigation Links (Desktop) */}
         <nav
-          className="hidden xl:flex items-center gap-1 lg:gap-2"
+          className="hidden md:flex items-center gap-2 lg:gap-4"
           aria-label="Main Navigation"
         >
           {siteConfig.navItems.map((item) => {
@@ -107,7 +107,7 @@ export const Navbar: React.FC = () => {
           <button
             onClick={toggleMobileMenu}
             aria-label="Toggle Menu"
-            className="xl:hidden inline-flex items-center justify-center w-10 h-10 rounded-md text-[#071B34] hover:bg-[#071B34]/5 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1457A6]"
+            className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-md text-[#071B34] hover:bg-[#071B34]/5 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1457A6]"
           >
             {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>

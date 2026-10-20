@@ -3,9 +3,6 @@ import { Navbar } from '@/components/ui/navigation/Navbar'
 import { MobileDrawer } from '@/components/ui/navigation/MobileDrawer'
 import { HeroScene } from '@/components/hero/HeroScene'
 import { AboutTransition } from '@/components/about/AboutTransition'
-import { NmietTransition } from '@/components/nmiet/NmietTransition'
-import { DomainsTransition } from '@/components/domains/DomainsTransition'
-import { StoryboardTimeline } from '@/components/hero/StoryboardTimeline'
 import { VideoLoader } from '@/components/ui/common/VideoLoader'
 import { JoinModal } from '@/components/ui/common/JoinModal'
 import { siteConfig } from '@/core/config/site.config'
@@ -27,15 +24,6 @@ export const HomePage: React.FC = () => {
 
         {/* Phase 2: About ACM NMIET — The Community Atrium */}
         <AboutTransition />
-
-        {/* Phase 3: NMIET — The Innovation Landmark */}
-        <NmietTransition />
-
-        {/* Phase 4: Domains — The Innovation District */}
-        <DomainsTransition />
-
-        {/* 5-Stage Storyboard Flow */}
-        <StoryboardTimeline />
       </main>
 
       {/* 3. Minimal Clean Architectural Footer */}

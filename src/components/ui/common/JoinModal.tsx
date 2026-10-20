@@ -5,7 +5,7 @@ import { siteConfig } from '@/core/config/site.config'
 
 export const JoinModal: React.FC = () => {
   const { isJoinModalOpen, closeJoinModal } = useExperience()
-  const [selectedDomain, setSelectedDomain] = useState('Web & Mobile Dev')
+  const [selectedInterest, setSelectedInterest] = useState('Web & Mobile Dev')
   const [submitted, setSubmitted] = useState(false)
   const [formData, setFormData] = useState({
     name: '',
@@ -16,7 +16,7 @@ export const JoinModal: React.FC = () => {
 
   if (!isJoinModalOpen) return null
 
-  const domains = [
+  const interestAreas = [
     { name: 'Web & Mobile Dev', desc: 'React, Next.js, Flutter, Node.js & Cloud' },
     { name: 'AI & Data Science', desc: 'Machine Learning, Deep Learning & Python' },
     { name: 'UI / UX Design', desc: 'Design systems, Figma & Creative direction' },
@@ -150,24 +150,24 @@ export const JoinModal: React.FC = () => {
 
             <div>
               <label className="block text-xs font-semibold uppercase tracking-wider text-[#071B34] mb-1.5">
-                Primary Interest Domain
+                Area of Interest
               </label>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                {domains.map((dom) => {
-                  const isSelected = selectedDomain === dom.name
+                {interestAreas.map((area) => {
+                  const isSelected = selectedInterest === area.name
                   return (
                     <button
                       type="button"
-                      key={dom.name}
-                      onClick={() => setSelectedDomain(dom.name)}
+                      key={area.name}
+                      onClick={() => setSelectedInterest(area.name)}
                       className={`text-left p-2.5 rounded-lg border text-xs transition-all ${
                         isSelected
                           ? 'border-[#1457A6] bg-[#1457A6]/10 text-[#071B34] font-semibold'
                           : 'border-[#071B34]/10 bg-white hover:border-[#1457A6]/40 text-[#536273]'
                       }`}
                     >
-                      <div className="font-medium text-[#102033]">{dom.name}</div>
-                      <div className="text-[11px] text-[#536273] truncate">{dom.desc}</div>
+                      <div className="font-medium text-[#102033]">{area.name}</div>
+                      <div className="text-[11px] text-[#536273] truncate">{area.desc}</div>
                     </button>
                   )
                 })}

@@ -22,26 +22,8 @@ export const NavigationProvider: React.FC<{ children: React.ReactNode }> = ({ ch
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 40)
 
-      // Section spy between Home, About, NMIET, and Domains
-      const domainsEl = document.getElementById('domains')
-      const nmietEl = document.getElementById('nmiet')
+      // Section spy between Home and About
       const aboutEl = document.getElementById('about')
-
-      if (domainsEl) {
-        const domainsRect = domainsEl.getBoundingClientRect()
-        if (domainsRect.top <= window.innerHeight * 0.5 && domainsRect.bottom >= window.innerHeight * 0.2) {
-          setActiveItem('Domains')
-          return
-        }
-      }
-
-      if (nmietEl) {
-        const nmietRect = nmietEl.getBoundingClientRect()
-        if (nmietRect.top <= window.innerHeight * 0.5 && nmietRect.bottom >= window.innerHeight * 0.2) {
-          setActiveItem('NMIET')
-          return
-        }
-      }
 
       if (aboutEl) {
         const aboutRect = aboutEl.getBoundingClientRect()
