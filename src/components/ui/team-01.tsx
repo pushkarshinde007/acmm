@@ -1,7 +1,7 @@
 "use client";
 import { Badge } from "@/components/ui/badge";
 import { Globe } from "lucide-react";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 
 import member01 from "@/assets/team/member_01.jpg";
 import member02 from "@/assets/team/member_02.jpg";
